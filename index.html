@@ -6,7 +6,7 @@
 
 		<title>Intro to Git and Github ~ Girl Develop It</title>
 
-		<meta name="description" content="This is the official Girl Develop It Core Intro to Git and GitHub course. Material based on original material by Kim Moir, Daniel Fischer, Aurelia Moser, Carina C. Zona and Izzy Johnston. 
+		<meta name="description" content="This is the official Girl Develop It Core Intro to Git and GitHub course. Material based on original material by Kim Moir, Daniel Fischer, Aurelia Moser, Carina C. Zona and Izzy Johnston.
 
     The course is meant to be taught in a two-hour workshop. Each of the slides and practice files are customizable according to the needs of a given class or audience.">
 		<meta name="author" content="Girl Develop It">
@@ -22,7 +22,7 @@
 		<!-- dark editor--><link rel="stylesheet" href="reveal/lib/css/dark.css">
 
 		<!-- If use the PDF print sheet so students can print slides-->
-		
+
 		<link rel="stylesheet" href="reveal/css/print/pdf.css" type="text/css" media="print">
 
 		<!--[if lt IE 9]>
@@ -41,7 +41,7 @@
           <img src = "images/gdi_logo_badge.png">
           <h3>Intro to Git and Github</h3>
         </section>
-        
+
         <!-- Welcome-->
         <section>
           <h3>Welcome!</h3>
@@ -56,7 +56,7 @@
           </ul>
           </div>
         </section>
-        
+
         <section>
           <h3>Welcome!</h3>
           <div class = "left-align">
@@ -68,7 +68,7 @@
           </ul>
           </div>
         </section>
-        
+
         <section>
           <h3>What we will cover today</h3>
           <ul>
@@ -77,9 +77,9 @@
             <li class ="fragment">"Gitting" social with GitHub</li>
           </ul>
         </section>
-        
+
         <!-- Version control-->
-        <section>
+
           <section>
             <h3>What is version control?</h3>
             <p>Version control allows you (and your team) to do two powerful things</p>
@@ -102,8 +102,7 @@
             <img src = "images/with-vc.png" alt = "Successfully making a grocery list with 5 people and version control"/>
             <p>Rainbows and bunny rabbits!</h3>
           </section>
-        </section>
-        <section>
+
           <section>
             <h3>Brief history of Version Control</h3>
             <p><span class ="green">1990s</span> -- CVS (Concurrent Version Systems)</p>
@@ -115,23 +114,23 @@
             <div class="fragment">
               <h4>Centralized Version Control</h4>
               <p>Examples: CVS, SVN</p>
-              <p>One central server, each client (person) checks out and merges changes to main server</p>
+              <p>One central server, each client (person) checks out files and merges changes to main server but history log is stored on server.</p>
             </div>
             <div class="fragment">
               <h4>Distributed Version Control</h4>
               <p>Examples: Git, Mercurial</p>
-              <p>Each client (person) has a local repository, which they can then reconcile with the main server.</p>
+              <p>Each client (person) has a local repository that includes the history log, which they can then reconcile with the main server.</p>
             </div>
           </section>
           <section>
             <h3>Version Control Distribution</h3>
             <a href = "http://redmonk.com/sogrady/2012/11/05/dvcs-2012/" target="_blank" alt ="Centralized vs Decentralized Version Control: 2010 vs 2012"><img src = "images/subversion-share-2012.png" alt ="Version control share between Bazaar, CVS, Git, Mercurial and Subversion"/></a>
           </section>
-           <section>
+          <section>
               <h3>Version Control Distribution Change</h3>
               <a href = "http://redmonk.com/sogrady/2012/11/05/dvcs-2012/" target="_blank" alt ="Centralized vs Decentralized Version Control: 2010 vs 2012"><img src = "images/subversion-change-2010-2012.png" alt ="Version control distribution share between 2010 and 2012 between Bazaar, CVS, Git, Mercurial and Subversion"/></a>
-            </section>
-        </section>
+          </section>
+
         <!-- Git-->
         <section>
           <h3>Intro to Git</h3>
@@ -140,7 +139,7 @@
             <li>Fast -- add to your team and code base quickly</li>
             <li>Distributed (see slide above) </li>
             <li>Each commit has a corresponding hash (track changes from everyone)</li>
-            <li>Everyone has a local copy of the history</li>
+            <li>Everyone has a local copy of the history log which means you can work on the repository locally</li>
           </ul>
         </section>
         <!-- Installation and Setup-->
@@ -151,6 +150,11 @@
               <p>Install git</p>
               <img src = "images/install-git.png" alt = "Download latest version of Git"/>
             </a>
+          </section>
+          <section>
+            <h3>Time to Use Your Terminal! Don't be Scared!</h3>
+            <p>Open your terminal and get ready.</p>
+            <p>If you are on Windows, right click on the desktop and select "git bash" to open the terminal.</p>
           </section>
           <section>
             <h3>Installation and Setup</h3>
@@ -166,6 +170,7 @@ $ ssh-keygen -t rsa -C "your_email@example.com"
             <pre><code contenteditable class ="command-line">
 Enter passphrase (empty for no passphrase): [Type a passphrase]
 # Enter same passphrase again: [Type passphrase again]
+# I recommend you leave this blank and just hit enter. It saves you a lot of time during development.
             </code></pre>
           </section>
           <section>
@@ -177,6 +182,18 @@ Your identification has been saved in /Users/you/.ssh/id_rsa.
 # The key fingerprint is:
 # 01:0f:f4:3b:ca:85:d6:17:a1:7d:f0:68:9d:f0:a2:db your_email@example.com
             </code></pre>
+            <p>Copy SSH Key to Clipboard for GitHub</p>
+            <pre><code contenteditable class ="command-line">
+# Use one of the following to copy the SSH key:
+pbcopy < ~/.ssh/id_rsa.pub
+# To use this you must have pbcopy on your computer
+cat ~/.ssh/id_rsa.pub
+            </code></pre>
+          </section>
+          <section>
+            <h3>Installation and Setup</h3>
+            <p>Create GitHub Account</p>
+            <p>Go to github.com
           </section>
           <section>
             <h3>Installation and Setup</h3>
@@ -256,7 +273,7 @@ $ git config --list
               <li class="fragment">When we <span class ="green">add</span> a new file, we tell Git to add the file to the repository to be tracked</li>
               <li class="fragment">When we <span class ="green">stage</span> an existing file (also with the keyword 'add'), we are telling Git to track the current state of our file</li>
               <li class="fragment">A <span class ="green">commit</span> saves changes made to a file, not the file as a whole. The commit will have a 'hash' so we can track which changes were committed when and by whom.</li>
-            
+
             </ul>
           </section>
           <section>
@@ -284,12 +301,12 @@ $ git config --list
         <section>
           <section>
             <h3>Nobody's Perfect</h3>
-            <h4>Undoing local changes</h4> 
+            <h4>Undoing local changes</h4>
             <p>If you haven't committed yet</p>
             <div class = "fragment">
               <p>Open hello_world.txt and add some new text</p>
               <pre><code contenteditable class ="command-line">
-  change hello_world.txt
+  # change hello_world.txt
   git checkout hello_world.txt
               </code></pre>
             </div>
@@ -297,7 +314,7 @@ $ git config --list
           </section>
           <section>
             <h3>Nobody's Perfect</h3>
-            <h4>Undoing staged changes</h4> 
+            <h4>Undoing staged changes</h4>
             <div class = "fragment">
               <p>Open hello_world.txt and add some new text</p>
               <pre><code contenteditable class ="command-line">
@@ -310,7 +327,7 @@ git checkout hello_world.txt
           </section>
           <section>
             <h3>Nobody's Perfect</h3>
-            <h4>Undoing staged changes</h4> 
+            <h4>Undoing staged changes</h4>
             <div class = "fragment">
               <p>Open hello_world.txt and add some new text</p>
               <pre><code contenteditable class ="command-line">
@@ -376,7 +393,7 @@ git branch
             <p>Switch to master and look at hello_world.txt</p>
             <pre><code contenteditable class ="command-line">
 git checkout master
-            </code></pre>            
+            </code></pre>
             <p>Switch to version2 and look at hello_world.txt</p>
             <pre><code contenteditable class ="command-line">
 git checkout version2
@@ -419,7 +436,7 @@ git commit -m "Changing first line in version2"
 git merge master
             </code></pre>
             <p class ="fragment">You will be notified of a conflict. Go to the file and fix the problem. Then commit your edits.</p>
-                       
+
           </section>
         </section>
         <!-- GitHub-->
